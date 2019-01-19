@@ -1,6 +1,7 @@
-# Static Site with Gulp.js, Sass & BrowserSync
+# Cade imovel - Front-end Development
+By Leandro Atallah (http://atallah.com.br)
 
 ---
 
 GitHub Pages
-https://leandroatallah.github.io/Static-project-Gulp-Sass-BrowserSync-/
+https://leandroatallah.github.io/cade-imovel/
