@@ -4,15 +4,16 @@ var gulp = require('gulp'),
 	minifyCSS = require('gulp-csso'),
 	autoprefixer = require('gulp-autoprefixer'),
   imagemin = require('gulp-imagemin'),
-  header = require('gulp-header'),
-  footer = require('gulp-footer');
+  replace = require('gulp-replace');
 
 
 var fs = require('fs');
 gulp.task('get-header-footer', function() {
   return gulp.src('./pages/*.html')
-    .pipe(header(fs.readFileSync('./templates/header.html', 'utf8')))
-    .pipe(footer(fs.readFileSync('./templates/footer.html', 'utf8')))
+    .pipe(replace('@_header', fs.readFileSync('./templates/header.html', 'utf8')))
+    .pipe(replace('@_footer', fs.readFileSync('./templates/footer.html', 'utf8')))
+    .pipe(replace('@_navigation', fs.readFileSync('./templates/navigation.html', 'utf8')))
+    .pipe(replace('@_imovel', fs.readFileSync('./templates/imovel-item.html', 'utf8')))
     .pipe(gulp.dest('./dist'));
 });
 

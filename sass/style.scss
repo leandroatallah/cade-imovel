@@ -115,6 +115,9 @@ $breakpoints: (
 
 
 // COMPONENTS
+html, body{
+	height: 100%;
+}
 body{
 	font-family: $poppins;
 }
@@ -135,54 +138,13 @@ body{
 }
 
 main{
-	min-height: 100%;
-}
-
-form{
-	margin: 80px 0;
-
-	label{
-		position: relative;
-		max-width: 220px;
-	}
-
-	input[type="search"]{
-		display: block;
-		width: 100%;
-		color: #fff;
-		line-height: 50px;
-		padding: 0 20px;
-		background: transparent;
-		border: 1px solid $light-gray;
-
-		@include placeholder {
-			font-size: 16px;
-			color: $gray-blue-dark;
-			opacity: .75;
-			font-style: italic;
-		}
-	}
-
-	input[type="submit"]{
-		cursor: pointer;
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		display: inline-block;
-		border: 0;
-		width: 18px;
-		height: 19px;
-		background-color: transparent;
-		background-image: url('../img/ico_search.png');
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
+	
 }
 
 // HEADER
 header{
 	padding: 10px 0;
+	margin-bottom: 30px;
 
 	h1#branding{
 		line-height: 1;
@@ -212,7 +174,74 @@ nav{
 
 // FOOTER
 footer{
+	padding: 6px 0;
+
+	span{
+		font-size: 12px;
+		color: $gray-blue-dark;
+		letter-spacing: .25px;
+	}
 }
 
 
 // HOME
+body.home{
+	footer{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+	}
+}
+form{
+	@include absolute-center;
+	width: 680px;
+	max-width: 100%;
+	padding-bottom: 40px;
+
+	label{
+		position: relative;
+		max-width: 220px;
+	}
+
+	input[type="search"]{
+		display: block;
+		width: 100%;
+		color: $gray-blue-dark;
+		line-height: 58px;
+		padding: 0 20px;
+		background: transparent;
+		border: 1px solid $light-gray;
+
+		@include placeholder {
+			font-size: 17px;
+			color: $gray-blue-dark;
+			opacity: .5;
+			font-style: italic;
+			font-weight: 300;
+			letter-spacing: .5px;
+		}
+	}
+
+	input[type="submit"]{
+		cursor: pointer;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		display: inline-block;
+		border: 0;
+		width: 18px;
+		height: 19px;
+		background-color: transparent;
+		background-image: url('../img/ico_search.png');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+
+// IMOVEIS
+.list-imovel{
+	.imovel-content{
+		margin-bottom: 20px;
+	}
+}
