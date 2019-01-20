@@ -6,26 +6,70 @@
 
 	<main>
 		<div id="app">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-3">
-						<aside id="filter">
-							<h3>Filtro</h3>
-							<ul>
-								<li><a href="#">Opção 1</a></li>
-								<li><a href="#">Opção 2</a></li>
-								<li><a href="#">Opção 3</a></li>
-							</ul>
-						</aside>
-					</div>
-					<div class="col-9">
-						<div class="list-imovel">
-							<div class="list-item">
-								@_imovel
-								@_imovel
-								@_imovel
-								@_imovel
-								@_imovel
+			<div class="wrapper">
+				<div class="bread-list">
+					<ul class="list-inline">
+						<li class="list-inline-item"><a href="index.html">Início</a></li>
+						<li class="list-inline-item">Imóveis</li>
+					</ul>
+				</div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-3">
+							<aside id="filter">
+								<h3>Filtro</h3>
+								<ul>
+									<li><a href="#">Opção 1</a></li>
+									<li><a href="#">Opção 2</a></li>
+									<li><a href="#">Opção 3</a></li>
+								</ul>
+							</aside>
+						</div>
+						<div class="col-9 pl-0	>
+							<form>
+								<input type="search" name="search-imovel" placeholder="Digite o bairro, cidade ou região">
+							</form>
+							<div class="list-header">
+								<div class="container-fluid">
+									<div class="row justify-content-between">
+										<div class="result">
+											<p>Exibindo <strong>380</strong> imóveis</p>
+										</div>
+										<div class="filter-header">
+											<div class="container-fluid">
+												<div class="row align-items-center">
+													<span>Ordernar por</span>
+													<select>
+														<option>Relevância</option>
+														<option>Maior preço</option>
+														<option>Menor preço</option>
+														<option>Mais recentes</option>
+														<option>Mais antigos</option>
+													</select>
+
+													<div class="list-format">
+														<a href="#">
+															<img src="assets/img/ico-list.png">
+														</a>
+														<a href="#">
+															<img src="assets/img/ico-col.png">
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							<div class="list-imovel">
+								<div class="list-item">
+									@_imovel
+									@_imovel
+									@_imovel
+									@_imovel
+									@_imovel
+								</div>
 							</div>
 						</div>
 					</div>

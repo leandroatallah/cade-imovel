@@ -45,116 +45,275 @@
 
 	<main>
 		<div id="app">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-3">
-						<aside id="filter">
-							<h3>Filtro</h3>
-							<ul>
-								<li><a href="#">Opção 1</a></li>
-								<li><a href="#">Opção 2</a></li>
-								<li><a href="#">Opção 3</a></li>
-							</ul>
-						</aside>
+			<div class="wrapper">
+				<div class="bread-list">
+					<ul class="list-inline">
+						<li class="list-inline-item"><a href="index.html">Início</a></li>
+						<li class="list-inline-item">Imóveis</li>
+					</ul>
+				</div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-3">
+							<aside id="filter">
+								<h3>Filtro</h3>
+								<ul>
+									<li><a href="#">Opção 1</a></li>
+									<li><a href="#">Opção 2</a></li>
+									<li><a href="#">Opção 3</a></li>
+								</ul>
+							</aside>
+						</div>
+						<div class="col-9 pl-0	>
+							<form>
+								<input type="search" name="search-imovel" placeholder="Digite o bairro, cidade ou região">
+							</form>
+							<div class="list-header">
+								<div class="container-fluid">
+									<div class="row justify-content-between">
+										<div class="result">
+											<p>Exibindo <strong>380</strong> imóveis</p>
+										</div>
+										<div class="filter-header">
+											<div class="container-fluid">
+												<div class="row align-items-center">
+													<span>Ordernar por</span>
+													<select>
+														<option>Relevância</option>
+														<option>Maior preço</option>
+														<option>Menor preço</option>
+														<option>Mais recentes</option>
+														<option>Mais antigos</option>
+													</select>
+
+													<div class="list-format">
+														<a href="#">
+															<img src="assets/img/ico-list.png">
+														</a>
+														<a href="#">
+															<img src="assets/img/ico-col.png">
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							<div class="list-imovel">
+								<div class="list-item">
+									<div class="imovel-content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-5 px-1">
+				<a href="#" class="thumb" style="background-image: url('assets/img/imovel.jpg');">
+					<span class="tag">Alguma tag!</span>
+				</a>
+			</div>
+			<div class="col-7">
+				<a href="#">
+					<h2>Recreio dos Bandeirantes</h2>
+
+					<div class="address">Rua Coronel João Olímpio, 578 - Recreio, Rio de Janeiro - RJ</div>
+
+					<ul class="list-inline">
+						<li class="list-inline-item"><strong>3</strong> <span>Quartos</span></li>
+						<li class="list-inline-item"><strong>1</strong> <span>Banheiro</span></li>
+						<li class="list-inline-item"><strong>1</strong> <span>Vaga</span></li>
+					</ul>
+
+					<div class="description">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</div>
-					<div class="col-9">
-						<div class="list-imovel">
-							<div class="list-item">
-								<div class="imovel-content">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-5">
-				<img src="assets/img/imovel.jpg">
-			</div>
-			<div class="col-7">
-				<h2>Residencial New Home</h2>
-				<div class="address">Rua Coronel João Olímpio, 578 - Recreio, Rio de Janeiro - RJ</div>
 
-				<ul class="list-inline">
-					<li class="list-inline-item"><strong>3</strong> <span>Quartos</span></li>
-					<li class="list-inline-item"><strong>1</strong> <span>Banheiro</span></li>
-					<li class="list-inline-item"><strong>1</strong> <span>Vaga</span></li>
-				</ul>
+					<div class="bottom">
+						<div class="container-fluid">
+							<div class="row justify-content-between align-items-center">
+								<div class="col-auto">
+									<p class="price">A partir de <br><strong>R$ 99.999</strong></p>
+								</div>
+								<div class="col-auto">
+									<a href="#" class="btn">Telefone</a>
+									<a href="#" class="btn">Mensagem</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
 </div>
-								<div class="imovel-content">
+									<div class="imovel-content">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-5">
-				<img src="assets/img/imovel.jpg">
+			<div class="col-5 px-1">
+				<a href="#" class="thumb" style="background-image: url('assets/img/imovel.jpg');">
+					<span class="tag">Alguma tag!</span>
+				</a>
 			</div>
 			<div class="col-7">
-				<h2>Residencial New Home</h2>
-				<div class="address">Rua Coronel João Olímpio, 578 - Recreio, Rio de Janeiro - RJ</div>
+				<a href="#">
+					<h2>Recreio dos Bandeirantes</h2>
 
-				<ul class="list-inline">
-					<li class="list-inline-item"><strong>3</strong> <span>Quartos</span></li>
-					<li class="list-inline-item"><strong>1</strong> <span>Banheiro</span></li>
-					<li class="list-inline-item"><strong>1</strong> <span>Vaga</span></li>
-				</ul>
+					<div class="address">Rua Coronel João Olímpio, 578 - Recreio, Rio de Janeiro - RJ</div>
+
+					<ul class="list-inline">
+						<li class="list-inline-item"><strong>3</strong> <span>Quartos</span></li>
+						<li class="list-inline-item"><strong>1</strong> <span>Banheiro</span></li>
+						<li class="list-inline-item"><strong>1</strong> <span>Vaga</span></li>
+					</ul>
+
+					<div class="description">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+
+					<div class="bottom">
+						<div class="container-fluid">
+							<div class="row justify-content-between align-items-center">
+								<div class="col-auto">
+									<p class="price">A partir de <br><strong>R$ 99.999</strong></p>
+								</div>
+								<div class="col-auto">
+									<a href="#" class="btn">Telefone</a>
+									<a href="#" class="btn">Mensagem</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
 </div>
-								<div class="imovel-content">
+									<div class="imovel-content">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-5">
-				<img src="assets/img/imovel.jpg">
+			<div class="col-5 px-1">
+				<a href="#" class="thumb" style="background-image: url('assets/img/imovel.jpg');">
+					<span class="tag">Alguma tag!</span>
+				</a>
 			</div>
 			<div class="col-7">
-				<h2>Residencial New Home</h2>
-				<div class="address">Rua Coronel João Olímpio, 578 - Recreio, Rio de Janeiro - RJ</div>
+				<a href="#">
+					<h2>Recreio dos Bandeirantes</h2>
 
-				<ul class="list-inline">
-					<li class="list-inline-item"><strong>3</strong> <span>Quartos</span></li>
-					<li class="list-inline-item"><strong>1</strong> <span>Banheiro</span></li>
-					<li class="list-inline-item"><strong>1</strong> <span>Vaga</span></li>
-				</ul>
+					<div class="address">Rua Coronel João Olímpio, 578 - Recreio, Rio de Janeiro - RJ</div>
+
+					<ul class="list-inline">
+						<li class="list-inline-item"><strong>3</strong> <span>Quartos</span></li>
+						<li class="list-inline-item"><strong>1</strong> <span>Banheiro</span></li>
+						<li class="list-inline-item"><strong>1</strong> <span>Vaga</span></li>
+					</ul>
+
+					<div class="description">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+
+					<div class="bottom">
+						<div class="container-fluid">
+							<div class="row justify-content-between align-items-center">
+								<div class="col-auto">
+									<p class="price">A partir de <br><strong>R$ 99.999</strong></p>
+								</div>
+								<div class="col-auto">
+									<a href="#" class="btn">Telefone</a>
+									<a href="#" class="btn">Mensagem</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
 </div>
-								<div class="imovel-content">
+									<div class="imovel-content">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-5">
-				<img src="assets/img/imovel.jpg">
+			<div class="col-5 px-1">
+				<a href="#" class="thumb" style="background-image: url('assets/img/imovel.jpg');">
+					<span class="tag">Alguma tag!</span>
+				</a>
 			</div>
 			<div class="col-7">
-				<h2>Residencial New Home</h2>
-				<div class="address">Rua Coronel João Olímpio, 578 - Recreio, Rio de Janeiro - RJ</div>
+				<a href="#">
+					<h2>Recreio dos Bandeirantes</h2>
 
-				<ul class="list-inline">
-					<li class="list-inline-item"><strong>3</strong> <span>Quartos</span></li>
-					<li class="list-inline-item"><strong>1</strong> <span>Banheiro</span></li>
-					<li class="list-inline-item"><strong>1</strong> <span>Vaga</span></li>
-				</ul>
+					<div class="address">Rua Coronel João Olímpio, 578 - Recreio, Rio de Janeiro - RJ</div>
+
+					<ul class="list-inline">
+						<li class="list-inline-item"><strong>3</strong> <span>Quartos</span></li>
+						<li class="list-inline-item"><strong>1</strong> <span>Banheiro</span></li>
+						<li class="list-inline-item"><strong>1</strong> <span>Vaga</span></li>
+					</ul>
+
+					<div class="description">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+
+					<div class="bottom">
+						<div class="container-fluid">
+							<div class="row justify-content-between align-items-center">
+								<div class="col-auto">
+									<p class="price">A partir de <br><strong>R$ 99.999</strong></p>
+								</div>
+								<div class="col-auto">
+									<a href="#" class="btn">Telefone</a>
+									<a href="#" class="btn">Mensagem</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
 </div>
-								<div class="imovel-content">
+									<div class="imovel-content">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-5">
-				<img src="assets/img/imovel.jpg">
+			<div class="col-5 px-1">
+				<a href="#" class="thumb" style="background-image: url('assets/img/imovel.jpg');">
+					<span class="tag">Alguma tag!</span>
+				</a>
 			</div>
 			<div class="col-7">
-				<h2>Residencial New Home</h2>
-				<div class="address">Rua Coronel João Olímpio, 578 - Recreio, Rio de Janeiro - RJ</div>
+				<a href="#">
+					<h2>Recreio dos Bandeirantes</h2>
 
-				<ul class="list-inline">
-					<li class="list-inline-item"><strong>3</strong> <span>Quartos</span></li>
-					<li class="list-inline-item"><strong>1</strong> <span>Banheiro</span></li>
-					<li class="list-inline-item"><strong>1</strong> <span>Vaga</span></li>
-				</ul>
+					<div class="address">Rua Coronel João Olímpio, 578 - Recreio, Rio de Janeiro - RJ</div>
+
+					<ul class="list-inline">
+						<li class="list-inline-item"><strong>3</strong> <span>Quartos</span></li>
+						<li class="list-inline-item"><strong>1</strong> <span>Banheiro</span></li>
+						<li class="list-inline-item"><strong>1</strong> <span>Vaga</span></li>
+					</ul>
+
+					<div class="description">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+
+					<div class="bottom">
+						<div class="container-fluid">
+							<div class="row justify-content-between align-items-center">
+								<div class="col-auto">
+									<p class="price">A partir de <br><strong>R$ 99.999</strong></p>
+								</div>
+								<div class="col-auto">
+									<a href="#" class="btn">Telefone</a>
+									<a href="#" class="btn">Mensagem</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
 </div>
+								</div>
 							</div>
 						</div>
 					</div>
