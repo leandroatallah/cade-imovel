@@ -42,6 +42,72 @@ $breakpoints: (
     }
 }
 
+@mixin formatToggle{
+	.list-item{
+		margin-right: 6px;
+		width: calc((100% / 3) - 6px);
+		border-bottom: 0;
+
+		.format-item{
+			& > div{
+				max-width: none;
+				flex-basis: 100%;
+				padding-left: 4px;
+				padding-right: 4px;
+			}
+
+		}
+
+		ul{
+			margin: 10px 0;
+		}
+
+		h2{
+			font-size: 21px;
+		}
+		.thumb{
+			margin-bottom: 10px;
+
+			.tag{
+				font-size: 11px;
+			}
+		}
+
+		.bottom{
+			position: static;
+			margin-top: 15px;
+
+
+			.format-nopad{
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		}
+
+		p.price{
+			font-size: 12px;
+
+			strong{
+				font-size: 14px;
+			}
+
+			&.price-2{
+				font-size: 18px;
+
+				strong{
+					font-size: 21px;
+				}
+			}
+		}
+
+		.btn{
+			font-size: 11px;
+			padding: 0 6px;
+			margin-right: 4px;
+		}
+	}
+}
+
 @mixin absolute-center{
 	position: absolute;
 	top: 50%;
@@ -148,7 +214,11 @@ main{
 
 .bread-list{
 	border-bottom: 1px solid #f0f0f0;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
+
+	&.no-gap{
+		margin-bottom: 0;
+	}
 
 	ul{
 		margin-left: 16px;
@@ -227,10 +297,22 @@ form{
 	}
 }
 
+*{
+	@include placeholder {
+		font-size: 14px;
+		color: $gray-blue-dark;
+		opacity: .5;
+		font-style: italic;
+		font-weight: 300;
+		letter-spacing: .25px;
+	}
+}
+
 // HEADER
 header{
 	padding: 10px 0;
 	margin-bottom: 30px;
+	border-bottom: 1px solid #f0f0f0;
 
 	h1#branding{
 		line-height: 1;
@@ -322,6 +404,10 @@ body.home form.main-search{
 	.list-format{
 		margin-left: 28px;
 
+		@include mq('tablet', 'max') {
+			display: none;
+		}
+
 		a{
 			display: inline-block;
 			margin-left: 6px;
@@ -340,7 +426,7 @@ body.home form.main-search{
 }
 
 .list-imovel{
-	.imovel-content{
+	.list-item{
 		position: relative;
 		margin-bottom: 34px;
 		border-bottom: 1px solid #f0f0f0;
@@ -429,40 +515,153 @@ body.home form.main-search{
 			bottom: 0;
 			padding-bottom: 10px;
 
-			.btn{
-				display: inline-block;
-				padding: 0 12px;
-				line-height: 2.5;
-				text-transform: uppercase;
-				letter-spacing: .25px;
+		}
+		.btn{
+			display: inline-block;
+			padding: 0 12px;
+			line-height: 2.5;
+			text-transform: uppercase;
+			letter-spacing: .25px;
+			font-size: 13px;
+			color: $gray-blue;
+			font-weight: 600;
+			font-family: $open;
+			margin-right: 10px;
+			border-radius: 2px;
+			border: 1px solid $gray-blue-light;
+
+			&:hover{
+				color: #fff;
+				background-color: $gray-blue-light;
+			}
+		}
+
+		p.price{
+			font-size: 14px;
+			color: $gray;
+			letter-spacing: .25px;
+			line-height: 1.3;
+			font-family: $open;
+			margin: 0;
+
+			strong{
+				color: $gray-blue;
+				font-size: 20px;
+				word-spacing: 1px;
+			}
+		}
+
+		&.format-col{
+			@include formatToggle;
+		}
+	}
+
+	@include mq('tablet', 'max') {
+		@include formatToggle;
+
+		.list-item{
+			width: 100% !important;
+		}
+	}
+}
+
+
+// ASIDE FILTER
+aside{
+	h3{
+		font-size: 16px;
+		color: $gray-blue-dark;
+		text-transform: uppercase;
+		font-family: $open;
+		font-weight: 600;
+	}
+	ul{
+		margin: 0 0 20px;
+		padding: 0 0 10px;
+		list-style: none;
+		border-bottom: 1px solid #f0f0f0;
+
+		&:last-child{
+			border-bottom: none;
+		}
+
+		li{
+			display: block;
+			line-height: 1.6;
+
+			label{
 				font-size: 13px;
 				color: $gray-blue;
-				font-weight: 600;
-				font-family: $open;
-				margin-right: 10px;
-				border-radius: 2px;
-				border: 1px solid $gray-blue-light;
-
-				&:hover{
-					color: #fff;
-					background-color: $gray-blue-light;
-				}
+				letter-spacing: .25px;
+				margin-left: 8px;
 			}
 
-			p.price{
-				font-size: 14px;
-				color: $gray;
-				letter-spacing: .25px;
-				line-height: 1.3;
-				font-family: $open;
-				margin: 0;
+			input{
+				vertical-align: middle;
+			}
+		}
 
-				strong{
+		form{
+			input[type="search"]{
+				font-size: 14px;
+				line-height: 3;
+
+				@include placeholder {
+					font-size: 13px;
+					opacity: .75;
+				}
+			}
+		}
+
+		&.list-price{
+			li{
+				width: 40%;
+				margin-right: 10px;
+				display: inline-block;
+				position: relative;
+
+				&:after{
+					content: 'R$';
+					display: inline-block;
+					width: 20px;
+					text-align: center;
+					position: absolute;
+					left: 4px;
+					bottom: 6px;
+					font-size: 14px;
+					color: $gray-blue-dark;
+					opacity: .5;
+					letter-spacing: .25px;
+				}
+
+				label{
+					margin: 0;
+					width: 100%;
+				}
+				input{
+					width: 100%;
+					padding: 0 5px 0 25px;
+					font-size: 14px;
 					color: $gray-blue;
-					font-size: 20px;
-					word-spacing: 1px;
+					line-height: 2;
+					margin-top: 4px;
+
+					@include placeholder {
+						font-style: unset;
+						text-align: right;
+					}
 				}
 			}
 		}
 	}
+}
+
+// IMOVEL SINGLE
+.main-thumb{
+	height: 420px;
+	background-repeat: no-repeat;
+	background-color: $gray-blue-light;
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 60px;
 }

@@ -47,8 +47,9 @@ gulp.task('serve', gulp.series('sass', function() {
     });
 
     gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', './sass/**/*.scss'], gulp.series('sass'));
-    gulp.watch(['./pages/*.html', './templates/*.html', './dist/*.html']).on('change', browserSync.reload);
-    gulp.watch(['./pages/*.html', './templates/*.html', './dist/*.html']).on('change', gulp.series('get-header-footer', browserSync.reload));
+    gulp.watch(['./assets/js/*.js']).on('change', gulp.series('js', browserSync.reload));
+    gulp.watch(['./dist/*.html']).on('change', browserSync.reload);
+    gulp.watch(['./pages/*.html', './templates/*.html']).on('change', gulp.series('get-header-footer'));
     
 }));
 

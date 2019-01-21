@@ -15,17 +15,61 @@
 				</div>
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-3">
+						<div class="col-12 col-sm-3">
 							<aside id="filter">
-								<h3>Filtro</h3>
+								<h3>Tipo de imóvel</h3>
 								<ul>
-									<li><a href="#">Opção 1</a></li>
-									<li><a href="#">Opção 2</a></li>
-									<li><a href="#">Opção 3</a></li>
+									<li><input type="checkbox" id="tp-casa"><label for="tp-casa">Casa</a></li>
+									<li><input type="checkbox" id="tp-apto"><label for="tp-apto">Apartamento</a></li>
+									<li><input type="checkbox" id="tp-com"><label for="tp-com">Comercial</a></li>
+								</ul>
+
+								<h3>Status do imóvel</h3>
+								<ul>
+									<li><input type="checkbox" id="st-planta"><label for="st-planta">Na planta</a></li>
+									<li><input type="checkbox" id="st-constr"><label for="st-constr">Em construção</a></li>
+									<li><input type="checkbox" id="st-pronto"><label for="st-pronto">Pronto para morar</a></li>
+								</ul>
+
+								<h3>Preço</h3>
+								<ul class="list-price">
+									<li>
+										<label for="max">Mínimo</label>
+										<input type="number" step="0.01" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Somente números" id="max" placeholder="0">
+									</li>
+									<li>
+										<label for="min">Máximo</label>
+										<input type="number" step="0.01" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Somente números" id="min" placeholder="Ilimitado">
+									</li>
+								</ul>
+
+								<h3>Número de quartos</h3>
+								<ul class="group-check">
+									<li><input type="checkbox" id="qt-1"><label for="qt-1">1 ou mais</label></li>
+									<li><input type="checkbox" id="qt-2"><label for="qt-2">2 ou mais</label></li>
+									<li><input type="checkbox" id="qt-3"><label for="qt-3">3 ou mais</label></li>
+									<li><input type="checkbox" id="qt-4"><label for="qt-4">4 ou mais</label></li>
+								</ul>
+
+								<h3>Vagas na garagem</h3>
+								<ul class="group-check">
+									<li><input type="checkbox" id="vg-1"><label for="vg-1">1 ou mais</label></li>
+									<li><input type="checkbox" id="vg-2"><label for="vg-2">2 ou mais</label></li>
+									<li><input type="checkbox" id="vg-3"><label for="vg-3">3 ou mais</label></li>
+									<li><input type="checkbox" id="vg-4"><label for="vg-4">4 ou mais</label></li>
+								</ul>
+
+								<h3>O que busca em um imóvel?</h3>
+								<ul>
+									<li>
+										<form>
+											<input type="search" placeholder="Ex: mobiliado, piscina...">
+										</form>
+									</li>
 								</ul>
 							</aside>
 						</div>
-						<div class="col-9 pl-0	>
+						<div class="col-12 col-sm-9">
 							<form>
 								<input type="search" name="search-imovel" placeholder="Digite o bairro, cidade ou região">
 							</form>
@@ -38,22 +82,26 @@
 										<div class="filter-header">
 											<div class="container-fluid">
 												<div class="row align-items-center">
-													<span>Ordernar por</span>
-													<select>
-														<option>Relevância</option>
-														<option>Maior preço</option>
-														<option>Menor preço</option>
-														<option>Mais recentes</option>
-														<option>Mais antigos</option>
-													</select>
+													<div class="col-12 col">
+														<span>Ordernar por</span>
+														<select>
+															<option>Relevância</option>
+															<option>Maior preço</option>
+															<option>Menor preço</option>
+															<option>Mais recentes</option>
+															<option>Mais antigos</option>
+														</select>
+													</div>
 
-													<div class="list-format">
-														<a href="#">
-															<img src="assets/img/ico-list.png">
-														</a>
-														<a href="#">
-															<img src="assets/img/ico-col.png">
-														</a>
+													<div class="col-12 col">
+														<div class="list-format">
+															<a href="javascript:void(0);" onClick="toggleFormat('list');">
+																<img src="assets/img/ico-list.png">
+															</a>
+															<a href="javascript:void(0);" onClick="toggleFormat('col');">
+																<img src="assets/img/ico-col.png">
+															</a>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -62,8 +110,8 @@
 								</div>
 								
 							</div>
-							<div class="list-imovel">
-								<div class="list-item">
+							<div class="container-fluid">
+								<div class="list-imovel row">
 									@_imovel
 									@_imovel
 									@_imovel
