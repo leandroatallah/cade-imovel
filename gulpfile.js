@@ -30,13 +30,13 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', './assets/js/*'])
+  return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', './js/*'])
     .pipe(gulp.dest('./dist/assets/js'))
     .pipe(browserSync.stream());
 });
 
 gulp.task('imagemin', function() {
-  return gulp.src('./assets/img/*')
+  return gulp.src('./img/*')
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/assets/img'));
 });
@@ -47,7 +47,8 @@ gulp.task('serve', gulp.series('sass', function() {
     });
 
     gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', './sass/**/*.scss'], gulp.series('sass'));
-    gulp.watch(['./assets/js/*.js']).on('change', gulp.series('js', browserSync.reload));
+    gulp.watch(['./img/*']).on('change', gulp.series('imagemin', browserSync.reload));
+    gulp.watch(['./js/*.js']).on('change', gulp.series('js', browserSync.reload));
     gulp.watch(['./dist/*.html']).on('change', browserSync.reload);
     gulp.watch(['./pages/*.html', './templates/*.html']).on('change', gulp.series('get-header-footer'));
     

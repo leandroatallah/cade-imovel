@@ -11,6 +11,7 @@ $gray-blue-light: #62727b;
 $dark: #222222;
 $gray: #888888;
 $light-gray: #c8c8c8;
+$very-light-gray: #e4e4e4;
 
 // MIXINS
 @mixin placeholder {
@@ -106,6 +107,12 @@ $breakpoints: (
 			margin-right: 4px;
 		}
 	}
+}
+
+@mixin light-card {
+	padding: 12px 8px 12px 14px;
+	border: 1px solid $light-gray;
+	border-radius: 4px;
 }
 
 @mixin absolute-center{
@@ -213,7 +220,7 @@ main{
 }
 
 .bread-list{
-	border-bottom: 1px solid #f0f0f0;
+	border-bottom: 1px solid $very-light-gray;
 	margin-bottom: 30px;
 
 	&.no-gap{
@@ -307,12 +314,15 @@ form{
 		letter-spacing: .25px;
 	}
 }
+.light-card{
+	@include light-card;
+}
 
 // HEADER
 header{
 	padding: 10px 0;
 	margin-bottom: 30px;
-	border-bottom: 1px solid #f0f0f0;
+	border-bottom: 1px solid $very-light-gray;
 
 	h1#branding{
 		line-height: 1;
@@ -342,7 +352,7 @@ nav{
 
 // FOOTER
 footer{
-	padding: 6px 0;
+	padding: 8px 0;
 
 	span{
 		font-size: 12px;
@@ -426,10 +436,24 @@ body.home form.main-search{
 }
 
 .list-imovel{
+	&.format-col{
+		@include formatToggle;
+
+		&.column-4{
+			.list-item{
+				width: calc((100% / 4) - 10px);
+			}
+		}
+	}
+
 	.list-item{
 		position: relative;
 		margin-bottom: 34px;
-		border-bottom: 1px solid #f0f0f0;
+		border-bottom: 1px solid $very-light-gray;
+
+		&.list-single{
+			border-bottom: 0;
+		}
 
 		.thumb{
 			width: 100%;
@@ -550,10 +574,6 @@ body.home form.main-search{
 				word-spacing: 1px;
 			}
 		}
-
-		&.format-col{
-			@include formatToggle;
-		}
 	}
 
 	@include mq('tablet', 'max') {
@@ -579,7 +599,7 @@ aside{
 		margin: 0 0 20px;
 		padding: 0 0 10px;
 		list-style: none;
-		border-bottom: 1px solid #f0f0f0;
+		border-bottom: 1px solid $very-light-gray;
 
 		&:last-child{
 			border-bottom: none;
@@ -614,6 +634,8 @@ aside{
 		}
 
 		&.list-price{
+			@include light-card;
+
 			li{
 				width: 40%;
 				margin-right: 10px;
@@ -663,5 +685,143 @@ aside{
 	background-color: $gray-blue-light;
 	background-size: cover;
 	background-position: center;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
+}
+.list-imovel{
+	.list-item{	
+		.imovel-title{
+			text-align: center;
+			margin-bottom: 20px;
+
+			h2{
+				font-size: 36px;
+				font-weight: 700;
+			}
+			.address{
+				font-size: 18px;
+			}
+		}
+
+		p.price{
+			font-size: 18px;
+			strong{
+				font-size: 28px;
+			}
+		}
+
+		ul{
+			margin: 15px 0;
+			padding: 8px 10px;
+			list-style: none;
+
+			&.list-price{
+				li{
+					font-size: 15px;
+					margin-bottom: 10px;
+					padding-left: 20px;
+
+					&.big{
+						padding-left: 0;
+
+						strong{
+							font-size: 24px;
+							margin-bottom: 10px;
+						}
+					}
+				}
+			}
+
+			&.light-card{
+				@include light-card;
+			}
+
+			li{
+				font-size: 14px;
+				text-transform: uppercase;
+				letter-spacing: .25px;
+				color: $gray-blue-dark;
+				line-height: 1.4;
+				margin-bottom: 20px;
+				// border-bottom: 1px solid $light-gray;
+
+				strong{
+					color: $gray-blue;
+				}
+
+				&:last-child{
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		.description{
+			max-height: none;
+			overflow: initial;
+
+			h3{
+				margin-top: 25px;
+				font-size: 18px;
+				color: $gray-blue;
+				font-weight: 700;
+				line-height: 1;
+				letter-spacing: .75px;
+				text-transform: uppercase;
+				font-family: $open;
+			}
+
+			p{
+				font-size: 14px;
+				color: $gray-blue;
+				letter-spacing: .25px;
+				word-spacing: .25px;
+				line-height: 1.8;
+				font-family: $open;
+			}
+
+			ul{
+				list-style: none;
+				margin: 15px 0;
+				padding: 0;
+
+				li{
+					font-size: 11px;
+					
+					&:before{
+						content: '';
+						display: inline-block;
+						width: 3px;
+						height: 3px;
+						background-color: $gray-blue-light;
+						margin-right: 5px;
+						margin-bottom: 2px;
+					}
+				}
+			}
+		}
+
+		.group-btn{
+			margin: 25px 0;
+
+			.btn{
+				display: block;
+				width: 100%;
+				margin-bottom: 10px;
+				font-size: 16px;
+				line-height: 3;
+				letter-spacing: .5px;
+				font-weight: 700;
+				border-width: 2px;
+
+				&:first-child{
+					background-color: $gray-blue-light;
+					color: #fff;
+
+					&:hover{
+						background-color: $gray-blue;
+					}
+				}
+
+			}
+		}
+	}
 }
