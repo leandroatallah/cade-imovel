@@ -18,7 +18,7 @@ gulp.task('get-header-footer', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', './sass/**/*.scss'])
+  return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'node_modules/slick-carousel/slick/slick.scss', './sass/**/*.scss'])
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
@@ -30,7 +30,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', './js/*'])
+  return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/slick-carousel/slick/slick.js', 'node_modules/jquery/dist/jquery.min.js', './js/*'])
     .pipe(gulp.dest('./dist/assets/js'))
     .pipe(browserSync.stream());
 });
