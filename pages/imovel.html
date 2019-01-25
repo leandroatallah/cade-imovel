@@ -33,8 +33,12 @@
 										<div class="offset-0 offset-sm-1 col-12 col-sm-7 width-col-sm-7">
 											<div class="relative">
 												<div class="thumb-list">
-													<div class="thumb main-thumb" style="background-image: url('assets/img/imovel-2.jpg');"></div>
-													<div class="thumb main-thumb" style="background-image: url('assets/img/imovel.jpg');"></div>
+													<div class="thumb main-thumb">
+														<div class="src" style="background-image: url('assets/img/imovel-2.jpg');"></div>
+													</div>
+													<div class="thumb main-thumb">
+														<div class="src" style="background-image: url('assets/img/imovel.jpg');"></div>
+													</div>
 												</div>
 												<span class="thumb-tag">Alguma tag!</span>
 											</div>
@@ -71,8 +75,22 @@
 											</div>
 
 											<div class="group-btn">
-												<a href="#" class="btn">Ver Telefone</a>
-												<a href="#" class="btn">Enviar Mensagem</a>
+												<a href="javascript:void(0)" onClick="toggleInfoBox('tel')" class="btn">Ver Telefone</a>
+												<div class="info-box tel-box">
+													<span>(99) 9999-9999</span>
+												</div>
+												<a href="javascript:void(0)" onClick="toggleInfoBox('msg')" class="btn">Enviar Mensagem</a>
+												<div class="info-box msg-box">
+													<form>
+														<input type="text" placeholder="Nome">
+														<input type="email" placeholder="E-mail">
+														<input type="tel" placeholder="Telefone">
+														<textarea placeholder="Comentário"></textarea>
+														<input type="checkbox" id="email-check">
+														<label for="email-check">Desejo receber ofertas por e-mail</label>
+														<input type="submit" value="Enviar">
+													</form>
+												</div>
 											</div>
 
 											<ul class="list-info light-card">
@@ -115,6 +133,29 @@
 					</div>
 				</div>
 			</div>
+
+			<form class="form-bottom">
+				<h2 class="display-title text-center">Entre em contato</h2>
+				<div class="wrapper">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="offset-0 offset-sm-1 col-12 col-sm-5">
+								<input type="text" placeholder="Nome">
+								<input type="email" placeholder="E-mail">
+								<input type="tel" placeholder="Telefone">
+							</div>
+							<div class="col-12 col-sm-5">
+								<textarea placeholder="Comentário"></textarea>
+							</div>
+							<div class="offset-0 offset-sm-1 col-12 col-sm-10">
+								<input type="submit" value="Enviar">
+								<input type="checkbox" id="email-check"> 
+								<label for="email-check">Desejo receber ofertas por e-mail</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
 		</div>
 	</main>
 

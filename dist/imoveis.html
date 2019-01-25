@@ -20,17 +20,17 @@
 	<header>
 	<div class="wrapper">
 		<div class="container-fluid">
-			<div class="row justify-content-between">
-				<div class="col-auto">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-5 col-sm-auto pr-1">
 					<h1 id="branding">
 						<a href="index.html">
-							<img src="assets/img/logo-gray.png"/>
+							<img src="assets/img/logo-orange.png"/>
 						</a>
 					</h1>
 				</div>
-				<div class="col-auto">
+				<div class="col-7 col-sm-auto pl-1">
 					<nav>
-						<ul class="nav">
+						<ul class="nav justify-content-end">
 							<li class="nav-item">
 								<a class="nav-link" href="index.html">Início</a>
 							</li>
@@ -59,61 +59,69 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-12 col-sm-3">
-							<aside id="filter">
-								<h3>Tipo de imóvel</h3>
-								<ul>
-									<li><input type="checkbox" id="tp-casa"><label for="tp-casa">Casa</a></li>
-									<li><input type="checkbox" id="tp-apto"><label for="tp-apto">Apartamento</a></li>
-									<li><input type="checkbox" id="tp-com"><label for="tp-com">Comercial</a></li>
-								</ul>
+							<aside>
+								<div class="filter">
+									<span>Editar filtro</span>
+								</div>
 
-								<h3>Status do imóvel</h3>
-								<ul>
-									<li><input type="checkbox" id="st-planta"><label for="st-planta">Na planta</a></li>
-									<li><input type="checkbox" id="st-constr"><label for="st-constr">Em construção</a></li>
-									<li><input type="checkbox" id="st-pronto"><label for="st-pronto">Pronto para morar</a></li>
-								</ul>
+								<div class="aside-content">
+									<span id="close-btn">FECHAR</span>
+									<h3>Tipo de imóvel</h3>
+									<ul>
+										<li><input type="checkbox" id="tp-casa"><span class="check"></span><label for="tp-casa">Casa</li>
+										<li><input type="checkbox" id="tp-apto"><span class="check"></span><label for="tp-apto">Apartamento</li>
+										<li><input type="checkbox" id="tp-com"><span class="check"></span><label for="tp-com">Comercial</li>
+									</ul>
 
-								<h3>Preço</h3>
-								<ul class="group-price">
-									<li>
-										<label for="max">Mínimo</label>
-										<input type="number" step="0.01" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Somente números" id="max" placeholder="0">
-									</li>
-									<li>
-										<label for="min">Máximo</label>
-										<input type="number" step="0.01" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Somente números" id="min" placeholder="Ilimitado">
-									</li>
-								</ul>
+									<h3>Status do imóvel</h3>
+									<ul>
+										<li><input type="checkbox" id="st-planta"><span class="check"></span><label for="st-planta">Na planta</li>
+										<li><input type="checkbox" id="st-constr"><span class="check"></span><label for="st-constr">Em construção</li>
+										<li><input type="checkbox" id="st-pronto"><span class="check"></span><label for="st-pronto">Pronto para morar</li>
+									</ul>
 
-								<h3>Número de quartos</h3>
-								<ul class="group-check">
-									<li><input type="checkbox" id="qt-1"><label for="qt-1">1 ou mais</label></li>
-									<li><input type="checkbox" id="qt-2"><label for="qt-2">2 ou mais</label></li>
-									<li><input type="checkbox" id="qt-3"><label for="qt-3">3 ou mais</label></li>
-									<li><input type="checkbox" id="qt-4"><label for="qt-4">4 ou mais</label></li>
-								</ul>
+									<h3>Preço</h3>
+									<ul class="group-price">
+										<li>
+											<label for="max">Mínimo</label>
+											<input type="number" step="0.01" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Somente números" id="max" placeholder="0">
+										</li>
+										<li>
+											<label for="min">Máximo</label>
+											<input type="number" step="0.01" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Somente números" id="min" placeholder="Ilimitado">
+										</li>
+									</ul>
 
-								<h3>Vagas na garagem</h3>
-								<ul class="group-check">
-									<li><input type="checkbox" id="vg-1"><label for="vg-1">1 ou mais</label></li>
-									<li><input type="checkbox" id="vg-2"><label for="vg-2">2 ou mais</label></li>
-									<li><input type="checkbox" id="vg-3"><label for="vg-3">3 ou mais</label></li>
-									<li><input type="checkbox" id="vg-4"><label for="vg-4">4 ou mais</label></li>
-								</ul>
+									<h3>Número de quartos</h3>
+									<ul class="group-check">
+										<li><input type="checkbox" id="qt-1"><span class="check"></span><label for="qt-1">1 ou mais</label></li>
+										<li><input type="checkbox" id="qt-2"><span class="check"></span><label for="qt-2">2 ou mais</label></li>
+										<li><input type="checkbox" id="qt-3"><span class="check"></span><label for="qt-3">3 ou mais</label></li>
+										<li><input type="checkbox" id="qt-4"><span class="check"></span><label for="qt-4">4 ou mais</label></li>
+									</ul>
 
-								<h3>O que busca em um imóvel?</h3>
-								<ul>
-									<li>
-										<form>
-											<input type="search" placeholder="Ex: mobiliado, piscina...">
-										</form>
-									</li>
-								</ul>
+									<h3>Vagas na garagem</h3>
+									<ul class="group-check">
+										<li><input type="checkbox" id="vg-1"><span class="check"></span><label for="vg-1">1 ou mais</label></li>
+										<li><input type="checkbox" id="vg-2"><span class="check"></span><label for="vg-2">2 ou mais</label></li>
+										<li><input type="checkbox" id="vg-3"><span class="check"></span><label for="vg-3">3 ou mais</label></li>
+										<li><input type="checkbox" id="vg-4"><span class="check"></span><label for="vg-4">4 ou mais</label></li>
+									</ul>
+
+									<h3>O que busca em um imóvel?</h3>
+									<ul>
+										<li>
+											<form class="main-search">
+												<input type="search" placeholder="Ex: mobiliado, piscina...">
+											</form>
+										</li>
+									</ul>
+									<a href="imoveis.html" id="submit-btn">Atualizar</a>
+								</div>
 							</aside>
 						</div>
 						<div class="col-12 col-sm-9">
-							<form>
+							<form class="main-search">
 								<input type="search" name="search-imovel" placeholder="Digite o bairro, cidade ou região">
 							</form>
 							<div class="list-header">
@@ -162,10 +170,14 @@
 				<div class="col-5 px-1">
 					<div class="relative">
 						<div class="thumb-list">
-							<a href="imovel.html" class="thumb" style="background-image: url('assets/img/imovel-2.jpg');"></a>
-							<a href="imovel.html" class="thumb" style="background-image: url('assets/img/imovel.jpg');"></a>
+							<a href="imovel.html" class="thumb main-thumb">
+								<div class="src" style="background-image: url('assets/img/imovel-2.jpg');"></div>
+							</a>
+							<a href="imovel.html" class="thumb main-thumb">
+								<div class="src" style="background-image: url('assets/img/imovel.jpg');"></div>
+							</a>
 						</div>
-						<span class="thumb-tag">Alguma tag!</span>
+						<span class="thumb-tag">Destaque!</span>
 					</div>
 				</div>
 				<div class="col-7">
@@ -210,10 +222,14 @@
 				<div class="col-5 px-1">
 					<div class="relative">
 						<div class="thumb-list">
-							<a href="imovel.html" class="thumb" style="background-image: url('assets/img/imovel-2.jpg');"></a>
-							<a href="imovel.html" class="thumb" style="background-image: url('assets/img/imovel.jpg');"></a>
+							<a href="imovel.html" class="thumb main-thumb">
+								<div class="src" style="background-image: url('assets/img/imovel-2.jpg');"></div>
+							</a>
+							<a href="imovel.html" class="thumb main-thumb">
+								<div class="src" style="background-image: url('assets/img/imovel.jpg');"></div>
+							</a>
 						</div>
-						<span class="thumb-tag">Alguma tag!</span>
+						<span class="thumb-tag">Destaque!</span>
 					</div>
 				</div>
 				<div class="col-7">
@@ -258,10 +274,14 @@
 				<div class="col-5 px-1">
 					<div class="relative">
 						<div class="thumb-list">
-							<a href="imovel.html" class="thumb" style="background-image: url('assets/img/imovel-2.jpg');"></a>
-							<a href="imovel.html" class="thumb" style="background-image: url('assets/img/imovel.jpg');"></a>
+							<a href="imovel.html" class="thumb main-thumb">
+								<div class="src" style="background-image: url('assets/img/imovel-2.jpg');"></div>
+							</a>
+							<a href="imovel.html" class="thumb main-thumb">
+								<div class="src" style="background-image: url('assets/img/imovel.jpg');"></div>
+							</a>
 						</div>
-						<span class="thumb-tag">Alguma tag!</span>
+						<span class="thumb-tag">Destaque!</span>
 					</div>
 				</div>
 				<div class="col-7">
@@ -306,10 +326,14 @@
 				<div class="col-5 px-1">
 					<div class="relative">
 						<div class="thumb-list">
-							<a href="imovel.html" class="thumb" style="background-image: url('assets/img/imovel-2.jpg');"></a>
-							<a href="imovel.html" class="thumb" style="background-image: url('assets/img/imovel.jpg');"></a>
+							<a href="imovel.html" class="thumb main-thumb">
+								<div class="src" style="background-image: url('assets/img/imovel-2.jpg');"></div>
+							</a>
+							<a href="imovel.html" class="thumb main-thumb">
+								<div class="src" style="background-image: url('assets/img/imovel.jpg');"></div>
+							</a>
 						</div>
-						<span class="thumb-tag">Alguma tag!</span>
+						<span class="thumb-tag">Destaque!</span>
 					</div>
 				</div>
 				<div class="col-7">
@@ -354,10 +378,14 @@
 				<div class="col-5 px-1">
 					<div class="relative">
 						<div class="thumb-list">
-							<a href="imovel.html" class="thumb" style="background-image: url('assets/img/imovel-2.jpg');"></a>
-							<a href="imovel.html" class="thumb" style="background-image: url('assets/img/imovel.jpg');"></a>
+							<a href="imovel.html" class="thumb main-thumb">
+								<div class="src" style="background-image: url('assets/img/imovel-2.jpg');"></div>
+							</a>
+							<a href="imovel.html" class="thumb main-thumb">
+								<div class="src" style="background-image: url('assets/img/imovel.jpg');"></div>
+							</a>
 						</div>
-						<span class="thumb-tag">Alguma tag!</span>
+						<span class="thumb-tag">Destaque!</span>
 					</div>
 				</div>
 				<div class="col-7">

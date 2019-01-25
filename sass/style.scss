@@ -5,6 +5,8 @@
 // VARIABLE
 $poppins: 'Poppins', sans-serif;
 $open: 'Open Sans', sans-serif;
+$orange: #eb641c;
+$orange-dark: #d2582d;
 $gray-blue: #37474f;
 $gray-blue-dark: #102027;
 $gray-blue-light: #62727b;
@@ -68,7 +70,6 @@ $breakpoints: (
 		}
 		.thumb{
 			margin-bottom: 10px;
-
 		}
 		.thumb-tag{
 			font-size: 11px;
@@ -157,6 +158,7 @@ $breakpoints: (
 
 // TYPOGRAGHY
 a:hover{
+	color: $orange;
 	text-decoration: none;
 }
 .t11{
@@ -267,7 +269,14 @@ main{
 	}
 }
 
-form{
+input{
+	transition: .2s outline ease;
+	&:focus{
+		outline: 2px solid $orange;
+	}
+}
+
+form.main-search{
 	max-width: 100%;
 
 	label{
@@ -291,6 +300,10 @@ form{
 			font-style: italic;
 			font-weight: 300;
 			letter-spacing: .5px;
+
+			@include mq('tablet-wide', 'max') {
+				font-size: 12px;
+			}
 		}
 	}
 
@@ -327,7 +340,7 @@ form{
 
 // HEADER
 header{
-	padding: 10px 0;
+	padding: 15px 0;
 	margin-bottom: 30px;
 	border-bottom: 1px solid $very-light-gray;
 
@@ -336,7 +349,12 @@ header{
 		margin: 0;
 
 		img{
-			vertical-align: baseline;
+			vertical-align: middle;
+
+			@include mq('tablet-wide', 'max') {
+				width: 100%;
+				margin-bottom: 6px;
+			}
 		}
 	}
 }
@@ -345,13 +363,23 @@ header{
 nav{
 	ul{
 		li{
-			a{
+			a.nav-link{
 				font-size: 15px;
-				line-height: 2;
-				font-weight: 600;
+				line-height: 1.5;
+				font-weight: 500;
 				color: $gray-blue-dark;
 				letter-spacing: 1px;
 				text-transform: uppercase;
+				transition: .2s color ease;
+				padding: 0 15px;
+
+				&:hover{
+					color: $orange;
+				}
+
+				@include mq('tablet-wide', 'max') {
+					padding: 0 10px;
+				}
 			}
 		}
 	}
@@ -359,7 +387,6 @@ nav{
 
 // FOOTER
 footer{
-	margin-top: 40px;
 	padding: 8px 0;
 	border-top: 1px solid #f0f0f0;
 
@@ -383,6 +410,16 @@ body.home form.main-search{
 	@include absolute-center;
 	width: 680px;
 	padding-bottom: 40px;
+
+	@include mq('tablet', 'max') {
+		text-align: center;
+
+		input[type="search"]{
+			margin: 0 auto;
+			width: calc(100% - 30px);
+			line-height: 4;
+		}
+	}
 }
 
 // IMOVEIS
@@ -390,26 +427,48 @@ body.home form.main-search{
 	margin: 20px 0;
 }
 .result{
+	@include mq('tablet-wide', 'max') {
+		width: 100%;
+	}
+
 	p{
 		font-size: 21px;
 		letter-spacing: .25px;
 		line-height: 2;
-		color: $gray-blue;
+		color: $gray;
 		margin-bottom: 0;
 
 		strong{
 			font-weight: 600;
+			color: $orange;
+		}
+
+		@include mq('tablet-wide', 'max') {
+			font-size: 18px;
+			text-align: center;
+			width: 100%;
 		}
 	}
 }
 
 .filter-header{
+	@include mq('tablet-wide', 'max') {
+		padding: 15px 0;
+		border-top: 1px solid #f0f0f0;
+		border-bottom: 1px solid #f0f0f0;
+		text-align: center;
+	}
+
 	span{
 		font-size: 14px;
 		color: $gray-blue;
 		letter-spacing: .25px;
 		margin-right: 8px;
 		line-height: 2.5;
+
+		@include mq('tablet-wide', 'max') {
+			font-size: 11px;
+		}
 	}
 	select{
 		background: transparent;
@@ -419,11 +478,12 @@ body.home form.main-search{
 		color: $gray;
 		padding: 0 6px;
 		height: 36px;
+		border-color: $orange;
 	}
 	.list-format{
 		margin-left: 28px;
 
-		@include mq('tablet', 'max') {
+		@include mq('tablet-wide', 'max') {
 			display: none;
 		}
 
@@ -488,8 +548,34 @@ body.home form.main-search{
 		margin-bottom: 34px;
 		border-bottom: 1px solid $very-light-gray;
 
+		.thumb-list{
+			@include mq('tablet-wide', 'max') {
+				width: 100vw;
+				position: relative;
+				left: 50%;
+				right: 50%;
+				margin-left: -50vw;
+				margin-right: -50vw;
+			}
+		}
+
 		&.list-single{
 			border-bottom: 0;
+
+			.thumb{
+				&.main-thumb{
+					height: 420px;
+					background-repeat: no-repeat;
+					background-color: $gray-blue-light;
+					background-size: cover;
+					background-position: center;
+					margin-bottom: 40px;
+
+					@include mq('tablet-wide', 'max') {
+						height: 280px;
+					}
+				}
+			}
 
 			.imovel-title{
 				text-align: center;
@@ -500,6 +586,7 @@ body.home form.main-search{
 					font-weight: 700;
 					letter-spacing: 0;
 					text-transform: uppercase;
+					color: $orange;
 				}
 				.address{
 					font-size: 16px;
@@ -577,7 +664,7 @@ body.home form.main-search{
 
 				p{
 					font-size: 14px;
-					color: $gray-blue;
+					color: $gray;
 					letter-spacing: .25px;
 					word-spacing: .25px;
 					line-height: 1.8;
@@ -617,34 +704,39 @@ body.home form.main-search{
 					letter-spacing: .5px;
 					font-weight: 700;
 					border-width: 2px;
+					color: #fff;
+					background-color: $orange;
 
-					&:first-child{
-						background-color: $gray-blue-light;
-						color: #fff;
-
-						&:hover{
-							background-color: $gray-blue;
-						}
+					&:hover{
+						background-color: $orange-dark;
 					}
-
 				}
 			}
 		}
 
 		.thumb{
 			width: 100%;
-			padding-bottom: 65%;
+			height: 240px;
 			display: block;
-			background-size: cover;
-			background-position: center;
 			position: relative;
+
+			.src{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-size: cover;
+				background-position: center;
+			}
 		}
 		.thumb-tag{
 			display: inline-block;
 			position: absolute;
 			top: 12px;
 			left: -4px;
-			background-color: $gray-blue;
+			background-color: $orange;
+			border-bottom: 2px solid $orange-dark;
 			padding: 0 12px;
 			line-height: 2;
 			font-size: 13px;
@@ -672,7 +764,7 @@ body.home form.main-search{
 			color: $gray-blue;
 
 			&:hover{
-				color: $gray-blue-light;
+				color: $orange;
 			}
 		}
 
@@ -727,11 +819,11 @@ body.home form.main-search{
 			font-family: $open;
 			margin-right: 10px;
 			border-radius: 2px;
-			border: 1px solid $gray-blue-light;
+			border: 1px solid $orange;
 
 			&:hover{
 				color: #fff;
-				background-color: $gray-blue-light;
+				background-color: $orange;
 			}
 		}
 
@@ -751,7 +843,7 @@ body.home form.main-search{
 		}
 	}
 
-	@include mq('tablet', 'max') {
+	@include mq('tablet-wide', 'max') {
 		@include formatToggle;
 
 		.list-item{
@@ -763,18 +855,122 @@ body.home form.main-search{
 
 // ASIDE FILTER
 aside{
+	#close-btn{
+		display: none;
+	}
+	#submit-btn{
+		display: none;
+	}
+
+	.filter{
+		@include light-card;
+		padding: 8px 0;
+		display: none;
+		text-align: center;
+		background-color: $orange;
+		margin-bottom: 20px;
+
+		&:hover{
+			background-color: $orange-dark;
+		}
+
+		span{
+			font-family: $open;
+			font-weight: 700;
+			color: #fff;
+			letter-spacing: .25px;
+			font-size: 14px;
+			text-transform: uppercase;
+		}
+	}
+
+	@include mq('tablet-wide', 'max') {
+		.aside-content{
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #fff;
+			padding: 60px 20px 0;
+			z-index: 9999;
+		}
+
+		.filter{
+			display: block;
+		}
+
+		#close-btn{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			font-size: 13px;
+			font-weight: 700;
+			font-family: $open;
+			color: $gray-blue;
+			letter-spacing: 1px;
+			padding: 10px 0;
+			display: block;
+			width: 100%;
+			border-bottom: 1px solid #f0f0f0;
+			background-color: $very-light-gray;
+			text-align: center;
+			z-index: 9999;
+		}
+		#submit-btn{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			font-size: 14px;
+			font-weight: 700;
+			font-family: $open;
+			color: #fff;
+			letter-spacing: 1px;
+			padding: 10px 0;
+			display: block;
+			width: 100%;
+			background-color: $orange;
+			text-align: center;
+			text-transform: uppercase;
+			z-index: 9999;
+		}
+	}
+
 	h3{
 		font-size: 16px;
 		color: $gray-blue-dark;
 		text-transform: uppercase;
 		font-family: $open;
 		font-weight: 600;
+
+		@include mq('tablet-wide', 'max') {
+			font-size: 14px;
+			margin-bottom: 20px;
+
+			&:before{
+				content: '+';
+				display: inline-block;
+				color: $gray-blue;
+				margin-right: 6px;
+			}
+		}
 	}
 	ul{
 		margin: 0 0 20px;
 		padding: 0 0 10px;
 		list-style: none;
 		border-bottom: 1px solid $very-light-gray;
+
+		@include mq('tablet-wide', 'max') {
+			display: none;
+
+			&.open{
+				// height: auto;
+			}
+		}
 
 		&:last-child{
 			border-bottom: none;
@@ -789,10 +985,28 @@ aside{
 				color: $gray-blue;
 				letter-spacing: .25px;
 				margin-left: 8px;
+				cursor: pointer;
+
+				@include mq('tablet-wide', 'max') {
+					font-size: 12px;
+				}
 			}
 
-			input{
+			input[type="checkbox"]{
 				vertical-align: middle;
+				display: none;
+
+				& + .check{
+					display: inline-block;
+					width: 14px;
+					height: 14px;
+					border: 2px solid $orange;
+					border-radius: 2px;
+					margin-bottom: -2px;
+				}
+				&:checked + .check{
+					background-color: $orange;
+				}
 			}
 		}
 
@@ -804,6 +1018,10 @@ aside{
 				@include placeholder {
 					font-size: 13px;
 					opacity: .75;
+
+					@include mq('tablet-wide', 'max') {
+						font-size: 12px;
+					}
 				}
 			}
 		}
@@ -844,6 +1062,10 @@ aside{
 					@include placeholder {
 						font-style: unset;
 						text-align: right;
+
+						@include mq('tablet-wide', 'max') {
+							font-size: 12px;
+						}
 					}
 				}
 			}
@@ -852,7 +1074,7 @@ aside{
 }
 
 .pagger-list{
-	margin: 15px 0;
+	margin: 15px 0 40px;
 	text-align: center;
 
 	ul{
@@ -862,26 +1084,26 @@ aside{
 
 		li{
 			display: inline-block;
-			margin: 0 2px;
+			margin: 0 2px 8px;
 
 			a{
 				font-size: 13px;
 				font-family: $open;
 				font-weight: 600;
 				display: block;
-				color: $gray-blue-dark;
+				color: $orange;
 				line-height: 2.4;
 				padding: 0 12px;
-				border: 1px solid $gray-blue-dark;
+				border: 1px solid $orange;
 				transition: .2s all ease;
 
 				&:not([href]):not([tabindex]) {
 					color: #fff;
-					background-color: $gray-blue;
+					background-color: $orange;
 				}
 				&:hover {
 					color: #fff;
-					background-color: $gray-blue-dark;
+					background-color: $orange;
 				}
 			}
 		}
@@ -889,14 +1111,7 @@ aside{
 }
 
 // IMOVEL SINGLE
-.main-thumb{
-	height: 420px;
-	background-repeat: no-repeat;
-	background-color: $gray-blue-light;
-	background-size: cover;
-	background-position: center;
-	margin-bottom: 40px;
-}
+
 .wrap-relac{
 	margin-top: 40px;
 }
@@ -935,6 +1150,123 @@ aside{
 .thumb-list{
 }
 
+.info-box{
+	@include light-card;
+	padding: 12px;
+	display: none;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	border-radius: 0 0 4px 4px;
+	text-align: center;
+
+	span{
+		font-family: $open;
+		font-size: 18px;
+		font-weight: 600;
+		color: $gray-blue-dark;
+		letter-spacing: .5px;
+	}
+
+	form{
+		text-align: left;
+
+		input,
+		textarea{
+			display: block;
+			width: 100%;
+			line-height: 2;
+			margin-bottom: 10px;
+			color: $gray-blue-dark;
+			padding: 0 10px;
+			border: 1px solid $light-gray;
+			border-radius: 2px;
+		}
+		textarea{
+			padding-top: 5px;
+			line-height: 1.2;
+			height: 80px;
+		}
+		input[type="checkbox"]{
+			width: 14px;
+			height: 14px;
+			display: inline-block;
+			margin-bottom: 0;
+		}
+		label{
+			display: inline-block;
+			font-size: 12px;
+			color: $gray-blue-dark;
+			line-height: 1.6;
+			vertical-align: middle;
+		}
+		input[type="submit"]{
+			display: inline-block;
+			font-size: 14px;
+			text-transform: uppercase;
+			line-height: 3;
+			letter-spacing: .5px;
+			font-weight: 700;
+			border-width: 0;
+			color: #fff;
+			background-color: $orange;
+
+			&:hover{
+				background-color: $orange-dark;
+			}
+		}
+	}
+}
+
+form.form-bottom{
+	margin-top: 30px;
+	background-color: #f2f2f2;
+	padding: 30px 0;
+
+	input,
+	textarea{
+		display: block;
+		width: 100%;
+		line-height: 2;
+		margin-bottom: 10px;
+		color: $gray-blue-dark;
+		padding: 0 10px;
+		border: 1px solid $light-gray;
+		border-radius: 2px;
+	}
+	textarea{
+		padding-top: 5px;
+		line-height: 1.2;
+		height: calc(100% - 10px);
+	}
+	input[type="checkbox"]{
+		width: 14px;
+		height: 14px;
+		display: inline-block;
+		margin-bottom: 0;
+	}
+	label{
+		display: inline-block;
+		font-size: 12px;
+		color: $gray-blue-dark;
+		line-height: 1.6;
+		vertical-align: middle;
+	}
+	input[type="submit"]{
+		display: inline-block;
+		font-size: 14px;
+		text-transform: uppercase;
+		line-height: 3;
+		letter-spacing: .5px;
+		font-weight: 700;
+		border-width: 0;
+		color: #fff;
+		background-color: $orange;
+
+		&:hover{
+			background-color: $orange-dark;
+		}
+	}
+}
 
 // BOOTSTRAP RESET
 @include mq('phablet', 'min') {
